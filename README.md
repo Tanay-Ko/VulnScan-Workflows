@@ -7,6 +7,8 @@ and maintain the `v1` release tag referenced by VulnScan-generated caller workfl
 The reusable workflow scans the calling repository, removes secret-bearing fields from Gitleaks
 JSON, and uploads the machine-readable reports as a seven-day Actions artifact. VulnScan's
 authenticated backend imports that artifact and generates the private PDF stored in Supabase.
+Security findings are reported in the dashboard and do not fail the pull-request check; scanner
+execution errors still fail the workflow.
 
 The GitHub App that opens caller-workflow pull requests needs Contents: read and write and Pull
 requests: read and write permissions. It must not write or modify any other repository files.
