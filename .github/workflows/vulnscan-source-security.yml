@@ -1,0 +1,10 @@
+name: VulnScan Source Security
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-security:
+    uses: Tanay-Ko/vulnscan-workflows/.github/workflows/source-security.yml@v1
+    permissions:
+      contents: read
